@@ -8,7 +8,7 @@
 
 body {
 	counter-reset:slide;
-	font:25px/2 'PT Sans', sans-serif;
+	font:25px/2 'Iwona Sans', sans-serif;
 	}
 a {
 	text-decoration:none;
@@ -25,11 +25,11 @@ a {
 		font:bold 50px/1 'PT Sans Narrow', sans-serif;
 		}
 	a {
-		color:$blue;
+		color:$green;
 		text-shadow:0 -1px 1px #1F3F60;
 		text-decoration:none;
 		&:hover {
-			color:lighten($blue, 5%);
+			color:lighten($green, 5%);
 			}
 		}
 	}
@@ -54,7 +54,7 @@ a {
 		right:-50%;
 		left:-50%;
 		visibility:visible;
-		background:$blue;
+		background:$green;
 		box-shadow:0 0 1em rgba(#000, 0.3);
 		color:#FFF;
 		text-decoration:none;
@@ -62,7 +62,7 @@ a {
 		@include transform-origin(50% 100%);
 		@include transform(rotate(45deg) translateY(-1em));
 		&:hover {
-			background:lighten($blue, 3%);
+			background:lighten($green, 3%);
 			}
 		}
 
@@ -87,7 +87,7 @@ a {
 		width:50px;
 		height:80px;
 		background:url(../images/ribbon.svg) no-repeat;
-		color:#FFF;
+		color:#3C3D40;
 		counter-increment:slide;
 		content:counter(slide);
 		text-align:center;
@@ -118,16 +118,24 @@ a {
 		color:#666;
 		font:bold 50px/1 'PT Sans Narrow', sans-serif;
 		}
+        h3{
+                margin-left: -100px;
+                margin-top: -50px;
+                padding-bottom: 20px;
+                color:#666;
+                font:bold 15px/2 'PT Sans Narrow', sans-serif;
+
+        }
 	// Text
 	p {
 		margin:0 0 50px;
 		}
-	p.note {
+	p.note, li.note{
 		color:#999;
 		}
 	a {
 		border-bottom:0.1em solid;
-		color:$blue;
+		color:$green;
 		}
 	b, strong {
 		font-weight:bold;
@@ -135,10 +143,17 @@ a {
 	i, em {
 		font-style:italic;
 		}
+        pre {
+                line-height:1;
+		font: 18px/2 'PT Mono', monospace;                    
+                white-space:normal;
+                // padding:1px 0 0;
+                line-height:28px;
+        }
 	kbd, code, samp {
 		padding:3px 8px;
 		border-radius:8px;
-		background:$yellow;
+		background:#F7FCA0;
 		color:#000;
 		@include tab-size(4);
 		line-height:1;
@@ -151,11 +166,12 @@ a {
 			position:absolute;
 			margin:-16px 0 0 -80px;
 			color:#CCC;
-			font:200px/1 'PT Sans', sans-serif;
+			font:200px/1 'Iwona Sans', sans-serif;
 			content:'\201C';
 			}
 		& + figcaption {
 			margin:-50px 0 50px;
+                        font-size:small;
 			font-style:italic;
 			font-weight:bold;
 			}
@@ -188,71 +204,76 @@ a {
 		counter-increment:list;
 		content:counter(list)'.\00A0';
 		}
+        table {
+              font:18px/2 'Iwona Sans', sans-serif;
+              text-align: left;
+	      border-collapse: collapse;
+              th {
+                 padding: 0px 5px;
+              	 border-bottom: 2px solid #ccc;
+	         background-color: #dedede;
+                 border-right: 1px solid #ccc;
+	         border-left: 1px solid #ccc;
+              }
+              td {
+                 padding: 0px 5px;
+              	 border-bottom: 1px solid #ccc;
+                 border-right: 1px solid #ccc;
+	         border-left: 1px solid #ccc;             
+                 &.check{
+                        text-align: center;
+                        vertical-align: middle;
+                 }
+              }
+        }
 	// Code
-	pre {
-		margin:0 0 49px;
-		padding:1px 0 0;
-		counter-reset:code;
-		white-space:normal;
-		code {
-			display:block;
-			padding:0;
-			background:none;
-			white-space:pre;
-			line-height:50px;
-			&:before {
-				position:absolute;
-				margin:0 0 0 -110px;
-				width:100px;
-				color:#BBB;
-				text-align:right;
-				counter-increment:code;
-				content:counter(code, decimal-leading-zero)'.';
-				}
-			&:only-child:before {
-				content:'';
-				}
-			}
-		mark {
-			padding:3px 8px;
-			border-radius:8px;
-			background:#F7FCA0;
-			color:#000;
-			font-style:normal;
-			&.important {
-				background:#C00;
-				color:#FFF;
-				font-weight:normal;
-				}
-			&.comment {
-				padding:0;
-				background:none;
-				color:#999;
-				}
-			}
-		}
-	// Table
-	table {
-		margin:0 0 50px;
-		width:100%;
-		border-collapse:collapse;
-		border-spacing:0;
-		th, td {
-			background:url($dot) 0 100% repeat-x;
-			}
-		th {
-			text-align:left;
-			font-weight:bold;
-			}
-		&.striped {
-			tr:nth-child(even) {
-				background:#EEE;
-				}
-			}
-		}
+	// pre {
+	// 	margin:0 0 49px;
+	// 	padding:1px 0 0;
+	// 	counter-reset:code;
+	// 	white-space:normal;
+	// 	code {
+	// 		display:block;
+	// 		padding:0;
+	// 		background:none;
+	// 		white-space:pre;
+	// 		line-height:40px;
+	// 		&:before {
+	// 			position:absolute;
+	// 			margin:0 0 0 -110px;
+	// 			width:100px;
+	// 			color:#BBB;
+	// 			text-align:right;
+	// 			counter-increment:code;
+	// 			content:counter(code, decimal-leading-zero)'.';
+	// 			}
+	// 		&:only-child:before {
+	// 			content:'';
+	// 			} 
+	// 		}
+	// 	mark {
+	// 		padding:3px 8px;
+	// 		border-radius:8px;
+	// 		background:#F7FCA0;
+	// 		color:#000;
+	// 		font-style:normal;
+	// 		&.important {
+	// 			background:#C00;
+	// 			color:#FFF;
+	// 			font-weight:normal;
+	// 			}
+	// 		&.comment {
+	// 			padding:0;
+	// 			background:none;
+	// 			color:#999;
+	// 			}
+	// 		}
+	// 	}
+        
 	// Cover Shout
 	&.cover,
-	&.shout {
+	&.shout,
+        &.show {
 		z-index:1;
 		&:after {
 			visibility:hidden;
@@ -308,7 +329,21 @@ a {
 			font-size:150px;
 			@include transform(translateY(-50%));
 			}
-		}
+		}     
+         //Show - Video examples
+         &.show {
+                background-image:none;
+                iframe {
+                    position:absolute;
+                    top:50%;
+                    left:0;
+                    width:100%;
+                    height:550px;
+                    // width:1500px; 
+                    // height:450px; 
+                    @include transform(translateY(-50%));
+                }
+        }
 	// Place
 	.place {
 		position:absolute;
@@ -348,8 +383,8 @@ a {
 		z-index:1;
 		display:none;
 		padding:20px 120px;
-		background:$yellow;
-		box-shadow:0 0 0 2px desaturate($yellow, 20%) inset;
+		background:$blue;
+		box-shadow:0 0 0 2px desaturate($blue, 20%) inset;
 		@include transition(bottom 0.3s)
 		}
 	&:hover footer {
@@ -435,19 +470,19 @@ a {
 			&:target {
 				&:before {
 					box-shadow:
-						0 0 0 1px darken($blue, 10%),
-						0 0 0 10px $blue,
+						0 0 0 1px darken($green, 10%),
+						0 0 0 10px $green,
 						0 20px 50px rgba($grey, 0.6);
 					@media (max-width:$break) {
 						box-shadow:
-							0 0 0 1px darken($blue, 10%),
-							0 0 0 10px $blue,
+							0 0 0 1px darken($green, 10%),
+							0 0 0 10px $green,
 							0 20px 50px rgba($grey, 0.6);
 						}
 					}
 				&:after {
 					text-shadow:0 1px 1px rgba($grey, 0.6);
-					color:$blue;
+					color:$green;
 					}
 				}
 			// Inner
@@ -464,7 +499,8 @@ a {
 				}
 			// Cover Shout
 			&.cover,
-			&.shout {
+			&.shout,
+                        &.show {
 				&:after {
 					visibility:visible;
 					}
@@ -502,25 +538,6 @@ a {
 			&:target {
 				margin:0;
 				}
-			// Shout
-			&.shout {
-				&.grow, &.shrink {
-					h2 {
-						opacity:0;
-						@include transition(all 0.4s ease-out);
-						}
-					&:target h2 {
-						opacity:1;
-						@include transform(scale(1) translateY(-50%));
-						}
-					}
-				&.grow h2 {
-					@include transform(scale(0.1) translateY(-50%));
-					}
-				&.shrink h2 {
-					@include transform(scale(10) translateY(-50%));
-					}
-				}
 			}
 		// Progress
 		.progress {
@@ -540,6 +557,7 @@ a {
 			}
 		}
 	}
+
 
 // Print
 @page {

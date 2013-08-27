@@ -5,18 +5,21 @@
 // Layout
 $width:1024px; // Slide width, permanent in most cases
 $height:640px; // Slide height, 640px for 16/10, 768px for 4/3
-$top:105px;     // Top padding above slide content
+$top:50px;     // Top padding above slide content old: 105px
 $sides:120px;  // Left and right paddings around slide content
 $break:1324px; // Window width for small thumbnails to appear
 $ratio:'';
 
 // Colors
-$blue:#4B86C2;
-$grey:#2A2B2D;
-$yellow:#FAFAA2;
+$Oldblue:#4B86C2;
+$Oldgrey:#2A2B2D;
+$Oldyellow:#FAFAA2;
 
-// #999 1px
-$dot:'data:image/gif;base64,R0lGODdhAQABAPAAAJmZmQAAACH/C1hNUCBEYXRhWE1QAj94ACwAAAAAAQABAAACAkQBADs=';
+$grey:#4a5c66;
+$green:#80ba24;
+$thmred:#B80040;
+$yellow:#FFB300;
+$blue:#003BD1;
 
 // Ratio
 @if $height == 640px {
